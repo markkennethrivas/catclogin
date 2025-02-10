@@ -1,0 +1,392 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 55px;
+    aspect-ratio: 1 / 1;
+}
+
+.school {
+    padding-top: 5px;
+}
+
+.school-name {
+    font-family: "Cooper Black", sans-serif;
+    font-size: 20px;
+    color: #0040d6;
+    display: block;
+}
+
+.school-branches {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 11px;
+    color: gray;
+    display: block;
+    margin-top: 2px;
+}
+
+.Home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+  justify-content: space-between;
+}
+
+.Home-content {
+    max-width: 600px;
+}
+
+.Home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    color: black;
+}
+
+.Home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: blue;
+}
+
+.Home img {
+    width: 500px; /* Adjust size */
+    height: auto; /* Maintain aspect ratio */
+    float: right; /* Push image to the right */
+    margin-left: 20px; /* Add spacing */
+}
+
+.about {
+    text-align: center;
+    padding: 60px;
+    background-color: #f9f9f9;
+}
+.about-content{
+    max-width: 800px;
+    margin: auto;
+}
+
+.about h1 {
+    font-size: 36px; /* Adjust size as needed */
+    font-weight: bold;
+    color: #333; /* Customize the color */
+    margin-top: 50px; /* Adds space above the heading */
+    margin-bottom: 20px; /* Space below the title */
+    text-align: center; /* Center the title */
+}
+
+.about-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: blue;
+}
+
+.services {
+    text-align: center;
+    padding: 60px;
+    background-color: #f9f9f9;
+}
+.services-content{
+    max-width: 800px;
+    margin: auto;
+}
+
+.services h1 {
+    font-size: 36px; /* Adjust size as needed */
+    font-weight: bold;
+    color: #333; /* Customize the color */
+    margin-top: 50px; /* Adds space above the heading */
+    margin-bottom: 20px; /* Space below the title */
+    text-align: center; /* Center the title */
+}
+
+.services-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: blue;
+}
+
+.contact {
+    text-align: center;
+    padding: 60px;
+    background-color: #f9f9f9;
+}
+.contact-content{
+    max-width: 800px;
+    margin: auto;
+}
+
+.contact h1 {
+    font-size: 36px; /* Adjust size as needed */
+    font-weight: bold;
+    color: #333; /* Customize the color */
+    margin-top: 50px; /* Adds space above the heading */
+    margin-bottom: 20px; /* Space below the title */
+    text-align: center; /* Center the title */
+}
+
+.contact-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: blue;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 40px;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: black;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: 0.5s;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+}
+
+.navigation .btnlogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid black;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: black;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: 0.5s;
+}
+
+.navigation .btnlogin-popup:hover {
+    background: #5c90d5;
+    color: #162938;
+}
+
+/* Modal styles */
+#loginPopup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 25%;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Close button inside each form */
+#signIn .close,
+#signup .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.container {
+    background: #fff;
+    width: 100%;
+    padding: 1.5rem;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 1, 0.9);
+    position: relative;
+}
+
+form {
+    margin: 0 2rem;
+}
+
+.form-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1.3rem;
+    margin-bottom: 0.4rem;
+}
+
+input {
+    color: inherit;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #757575;
+    padding-left: 1.5rem;
+    font-size: 15px;
+}
+
+.input-group {
+    padding: 1% 0;
+    position: relative;
+}
+
+.input-group i {
+    position: absolute;
+    color: black;
+}
+
+input:focus {
+    background-color: transparent;
+    outline: transparent;
+    border-bottom: 2px solid hsl(0, 0%, 0%);
+}
+
+input::placeholder {
+    color: transparent;
+}
+
+label {
+    color: #757575;
+    position: relative;
+    left: 1.2em;
+    top: -1.3em;
+    cursor: auto;
+    transition: 0.3s ease all;
+}
+
+input:focus~label,
+input:not(:placeholder-shown)~label {
+    top: -3em;
+    color: hsl(330, 2%, 18%);
+    font-size: 15px;
+}
+
+.recover {
+    text-align: right;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.recover a {
+    text-decoration: none;
+    color: rgb(125, 125, 235);
+}
+
+.recover a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.btn {
+    font-size: 1.1rem;
+    padding: 8px 0;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    width: 100%;
+    background: rgb(125, 125, 235);
+    color: white;
+    cursor: pointer;
+    transition: 0.9s;
+}
+
+.btn:hover {
+    background: #07001f;
+}
+
+.or {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.icons {
+    text-align: center;
+}
+
+.icons i {
+    color: rgb(125, 125, 235);
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: 2px solid #dfe9f5;
+    margin: 0 15px;
+    transition: 1s;
+}
+
+.icons i:hover {
+    background: #07001f;
+    font-size: 1.6rem;
+    border: 2px solid rgb(125, 125, 235);
+}
+
+.links {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 4rem;
+    margin-top: 0.9rem;
+    font-weight: bold;
+}
+
+button {
+    color: rgb(125, 125, 235);
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+button:hover {
+    text-decoration: underline;
+    color: blue;
+}
+
+#signIn, #signup {
+    display: none;
+}
+
+#signIn {
+    display: block;
+}
+
